@@ -1,11 +1,27 @@
+require('dotenv').config();
 const express = require('express');
-const {middlewareList} = require('./config')
+const {middlewareList} = require('./config');
 const indexRouter = require('./routes/index');
+const {validateEnvironmentVariables} = require('./config');
+const debug = require('debug')('backend-task:server');
 
-const app = express();
+module.exports = async () => {
 
-app.use(middlewareList);
+    try{
+        // All important items to be loaded should be done here, if any of them can't be loaded the app will fail to start and an error will be logged
+        await validateEnvironmentVariables();
+        debug('Environment variables validated 👍');
+    }catch(e){
+        console.log(e);
+        process.exit(1);
+    }
 
-app.use('/', indexRouter);
+    const app = express();
 
-module.exports = app;
+    app.use(middlewareList);
+
+    app.use('/', indexRouter);
+
+    return app;
+};
+
