@@ -5,6 +5,7 @@ const indexRouter = require('./routes/index');
 const {validateEnvironmentVariables} = require('./config');
 const debug = require('debug')('backend-task:server');
 const loadAppConnections = require('./loaders');
+const DI = require('./di-container');
 
 module.exports = async () => {
   try {
