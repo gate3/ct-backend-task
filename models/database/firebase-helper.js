@@ -26,7 +26,7 @@ class FirebaseHelper {
    * @returns {object}
    */
   async saveEntity({model, newEntity}) {
-    const pushId = model.push(newEntity).key();
+    const pushId = model.push(newEntity).key;
     return {
       ...newEntity,
       id: pushId,
