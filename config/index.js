@@ -1,7 +1,8 @@
 const middlewareList = require('./middleware');
-const validateEnvironmentVariables = require('./env-variables-validator');
+const {validateEnvironmentVariables, envConfig} = require('./env-variables/');
 
 module.exports = {
-    middlewareList,
-    validateEnvironmentVariables
+  middlewareList,
+  envConfig,
+  validateEnvironmentVariables,
 };
