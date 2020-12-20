@@ -12,6 +12,10 @@ container.loadModules([
   [
     './**/*-validator.js',
   ],
+  // This pattern loads service functions that contains business logic
+  [
+    './**/*-service.js',
+  ],
 ], {
   cwd: __dirname,
   formatName: 'camelCase',
