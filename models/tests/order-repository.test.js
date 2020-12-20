@@ -18,7 +18,7 @@ const mockSampleOrder = {
   title: 'Block of Flats',
 };
 describe('Order Repository Class', () => {
-  afterEach(() => jest.clearAllMocks());
+  afterAll(() => jest.clearAllMocks());
   // Arrange
   const firebaseHelper = new FirebaseHelper({database: jest.fn()});
   const orderId = '-MOzZMdI0rVbERZSeu4Q';
@@ -26,7 +26,9 @@ describe('Order Repository Class', () => {
     ...newEntity,
     id: orderId,
   }));
-  const mockModel = {};
+  const mockModel = {
+    child: jest.fn(),
+  };
   const getModelMock = jest.fn(() => mockModel);
   const updateFullEntityMock = jest.fn();
   firebaseHelper.getModel
@@ -75,7 +77,7 @@ describe('Order Repository Class', () => {
     // eslint-disable-next-line max-len
     it('should call the database helper updateFullEntity function and not expect a return value', async () => {
       // Arrange
-      const expectedResult = null;
+      const expectedResult = undefined;
       // Act
       const actualResult = await orderRepository.updateOrder({
         orderId,
@@ -83,7 +85,7 @@ describe('Order Repository Class', () => {
       });
 
       // Assert
-      expect(actualResult).toMatchObject(expectedResult);
+      expect(actualResult).toBe(expectedResult);
     });
     // eslint-disable-next-line max-len
     it('should call the updateFullEntity function of firebaseHelper with the right arguments.', async () => {
@@ -97,7 +99,7 @@ describe('Order Repository Class', () => {
 
       // Assert
       expect(updateFullEntityMock).toHaveBeenCalledWith({
-        model: mockModel,
+        model: mockModel.child(),
         updatedEntity: mockSampleOrder,
       });
     });
