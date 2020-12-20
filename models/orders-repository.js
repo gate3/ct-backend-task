@@ -37,11 +37,11 @@ class OrdersRepository {
    * @param {object} - updatedOrder - The updated order information.
    * @return {Promise<null>} - null
    */
-  updateOrder({orderId, newOrder}) {
+  updateOrder({orderId, updatedOrder}) {
     const modelToModify = this._orderModel.child(`/${orderId}`);
     return this._databaseHelper.updateFullEntity({
       model: modelToModify,
-      updatedEntity: newOrder,
+      updatedEntity: updatedOrder,
     });
   }
 }
