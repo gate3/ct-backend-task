@@ -8,7 +8,7 @@ class FirebaseHelper {
    * @param database Connection Object
    */
   constructor({database}) {
-    this._database = database();
+    this._database = database;
   }
 
   /*
