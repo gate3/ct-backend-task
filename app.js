@@ -4,6 +4,7 @@ const {middlewareList} = require('./config');
 const indexRouter = require('./routes/index');
 const {validateEnvironmentVariables} = require('./config');
 const debug = require('debug')('backend-task:server');
+const loadAppConnections = require('./loaders');
 
 module.exports = async () => {
   try {
@@ -14,6 +15,7 @@ module.exports = async () => {
     */
     await validateEnvironmentVariables();
     debug('Environment variables validated 👍');
+    await loadAppConnections({debug});
   } catch (e) {
     console.log(e);
     process.exit(1);
