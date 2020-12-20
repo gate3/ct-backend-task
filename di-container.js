@@ -8,6 +8,10 @@ container.loadModules([
   [
     './**/*-repository.js',
   ],
+  // This pattern loads validation functions used in validating user data
+  [
+    './**/*-validator.js',
+  ],
 ], {
   cwd: __dirname,
   formatName: 'camelCase',
