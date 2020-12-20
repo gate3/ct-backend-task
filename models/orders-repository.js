@@ -30,6 +30,20 @@ class OrdersRepository {
       newEntity: newOrder,
     });
   }
+
+  /**
+   *
+   * @param {string} - orderId - The id of the order to update.
+   * @param {object} - updatedOrder - The updated order information.
+   * @return {Promise<null>} - null
+   */
+  updateOrder({orderId, newOrder}) {
+    const modelToModify = this._orderModel.child(`/${orderId}`);
+    return this._databaseHelper.updateFullEntity({
+      model: modelToModify,
+      updatedEntity: newOrder,
+    });
+  }
 }
 
 module.exports = OrdersRepository;

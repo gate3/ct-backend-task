@@ -26,7 +26,7 @@ class FirebaseHelper {
    * @return {firebaseRef} - Firebase ref to the root of the collection.
    */
   getModel(collectionName) {
-    return this._database.ref().child(modelName);
+    return this._database.ref().child(collectionName);
   }
 
   /**
