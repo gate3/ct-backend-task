@@ -5,6 +5,9 @@ const ROUTES = {
   PATHS: {
     ORDERS: '/orders',
   },
+  PARAMETERS: {
+    ORDER_ID: '/:orderId',
+  },
 };
 
 module.exports = ROUTES;
