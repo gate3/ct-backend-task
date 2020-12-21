@@ -16,6 +16,9 @@ container.loadModules([
   [
     './**/*-service.js',
   ],
+  [
+    './**/*-helper.js',
+  ],
 ], {
   cwd: __dirname,
   formatName: 'camelCase',
