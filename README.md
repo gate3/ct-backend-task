@@ -12,7 +12,7 @@ I made use of a Trello board to manage and breakdown the tasks, please find that
 <a href="https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/">Source LogRocket</a>
 
 # Architecture
-
+![alt](https://github.com/gate3/ct-backend-task/blob/staging/backend%20arch.png)
 ## Explanation
 
 The diagram above shows a rudimentary architecture to the backend application. My focus was majorly on making sure the app is extensible, DRY and ensuring components or tools can be swapped out without having to make large changes to the codebase.
