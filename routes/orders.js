@@ -10,9 +10,9 @@ const createOrderRoute = async (request, response) => {
     const createdOrder = await DI.container.resolve(
         'createOrderService',
     )(request);
-    return responseHelper.successResponse(res, createdOrder);
+    return responseHelper.successResponse(response, createdOrder);
   } catch (e) {
-    return responseHelper.errorResponse(res, e);
+    return responseHelper.errorResponse(response, e);
   }
 };
 router.post(`${VERSIONS.V1}${PATHS.ORDERS}`, createOrderRoute);

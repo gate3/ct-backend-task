@@ -1,7 +1,7 @@
 const awilix = require('awilix');
 const container = awilix.createContainer();
 const database = require('./models/database/firebase-connection');
-const databaseHelper = require('./models/database/firebase-helper');
+const databaseHelper = require('./models/database/database-helper');
 
 container.loadModules([
   // This pattern helps automatically load repositories into the DI container

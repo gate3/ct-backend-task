@@ -1,5 +1,5 @@
-const FirebaseHelper = require('../database/firebase-helper');
-jest.mock('../database/firebase-helper');
+const DatabaseHelper = require('../database/database-helper');
+jest.mock('../database/database-helper');
 
 const OrderRepository = require('../orders-repository');
 const mockSampleOrder = {
@@ -20,7 +20,7 @@ const mockSampleOrder = {
 describe('Order Repository Class', () => {
   afterAll(() => jest.clearAllMocks());
   // Arrange
-  const firebaseHelper = new FirebaseHelper({database: jest.fn()});
+  const databaseHelper = new DatabaseHelper({database: jest.fn()});
   const orderId = '-MOzZMdI0rVbERZSeu4Q';
   const saveEntityMock = jest.fn(async ({model, newEntity}) => ({
     ...newEntity,
@@ -31,14 +31,14 @@ describe('Order Repository Class', () => {
   };
   const getModelMock = jest.fn(() => mockModel);
   const updateFullEntityMock = jest.fn();
-  firebaseHelper.getModel
+  databaseHelper.getModel
       .mockImplementation(getModelMock);
-  firebaseHelper.saveEntity
+  databaseHelper.saveEntity
       .mockImplementation(saveEntityMock);
-  firebaseHelper.updateFullEntity
+  databaseHelper.updateFullEntity
       .mockImplementation(updateFullEntityMock);
 
-  const orderRepository = new OrderRepository({databaseHelper: firebaseHelper});
+  const orderRepository = new OrderRepository({databaseHelper});
 
   describe('Create order function', () => {
     // eslint-disable-next-line max-len
@@ -57,7 +57,7 @@ describe('Order Repository Class', () => {
       expect(actualOrder).toMatchObject(expectedOrder);
     });
     // eslint-disable-next-line max-len
-    it('should call the saveEntity function of firebaseHelper with the right arguments.', async () => {
+    it('should call the saveEntity function of databaseHelper with the right arguments.', async () => {
       // Arrange
 
       // Act
@@ -88,7 +88,7 @@ describe('Order Repository Class', () => {
       expect(actualResult).toBe(expectedResult);
     });
     // eslint-disable-next-line max-len
-    it('should call the updateFullEntity function of firebaseHelper with the right arguments.', async () => {
+    it('should call the updateFullEntity function of databaseHelper with the right arguments.', async () => {
       // Arrange
 
       // Act

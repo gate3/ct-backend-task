@@ -7,7 +7,7 @@ const {StatusCodes} = require('http-status-codes');
  * This class is important because it helps put the response logic in one place,
  * this makes it much easier to manage and helps keep the code DRY.
  *
- * @module FirebaseHelper
+ * @module ResponseHelpr
  */
 class ResponseHelpr {
   /**

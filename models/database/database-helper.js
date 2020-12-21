@@ -1,5 +1,5 @@
 /**
- * The firebase helper class is a layer over firebase,
+ * The database helper class is a layer over firebase,
  * it helps provide a common interface for performing operations on firebase
  * and any other database type.
  *
@@ -8,9 +8,9 @@
  * do the database specific implementation within them.
  * This helps us swap out database types and avoid vendor locking.
  *
- * @module FirebaseHelper
+ * @module DatabaseHelper
  */
-class FirebaseHelper {
+class DatabaseHelper {
   /**
    * @module constructor
    * @param {object} database - The firebase instance itself
@@ -56,4 +56,4 @@ class FirebaseHelper {
   }
 }
 
-module.exports = FirebaseHelper;
+module.exports = DatabaseHelper;
