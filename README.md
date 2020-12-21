@@ -9,6 +9,7 @@ I made use of a Trello board to manage and breakdown the tasks, please find that
 
 # File Structure
 ![file structure](https://i1.wp.com/blog.logrocket.com/wp-content/uploads/2019/10/folder-structure.png?w=730&ssl=1)
+
 <a href="https://blog.logrocket.com/the-perfect-architecture-flow-for-your-next-node-js-project/">Source LogRocket</a>
 
 # Architecture
