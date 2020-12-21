@@ -55,6 +55,14 @@ I had a lot of fun building this but there are some improvements I can still mak
 - Run ```npm i``` or ```npm install``` to install all app dependencies
 - I included a Makefile to help simplify running the app even further, to run in development mode you can use ```make debug``` while to run without development mode ```make start```. If you don't have make (You really should, it's awesome), you can run ```DEBUG=*:* npm start``` to run in development mode or ```npm start``` to run normally.
 
+# API Routes
+
+There are currently two api routes available
+- /v1/orders - POST
+- /v1/orders/:orderId - PUT
+
+The documentation for the endpoints can be found here <a href="https://documenter.getpostman.com/view/2336288/TVsuBmzA">https://documenter.getpostman.com/view/2336288/TVsuBmzA</a>
+
 # Tests
 
 To run the tests, simply type ```npm test```
